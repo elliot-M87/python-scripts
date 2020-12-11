@@ -1,0 +1,72 @@
+#!/usr/bin/python3
+import getpass
+def credentials():
+    name=input("enter the name : ")
+    password=getpass.getpass("enter your password")
+    main(name,password)
+    marks(x)
+    cal(list_marks)
+    grade(percent)
+    marksheet(name,total_obt,percent,gra)
+def marks(x):
+    if x == 1:
+        print("Enter the subject marks")
+        print(" ")
+        print("#####There are total 5 subjects#####")
+        global list_marks
+        list_marks=[]
+        subjects=['English','Maths','Hindi','Sanskrit','S.Science']
+        for i in range (len(subjects)):
+            name=subjects[i]
+            print('Enter the marks for ',(name))
+            marks=input()
+            list_marks.append(marks)
+        return(list_marks)    
+        #print(list_marks)
+    else: 
+        print("Auth.failure cant access the marksheet")
+def cal(list_marks):
+        global total_obt
+        total_obt = 0
+        for i in range (len(list_marks)):
+            total_obt = total_obt + int(list_marks[i])
+        global percent        
+        percent=total_obt/250 * 100
+        print(" ")
+        print("#########@@@@@@@@@@@@##########")
+        #print("Total Marks is ",(total_obt))
+        #print("Percentage Obtained is ",(percent))
+        return(total_obt)
+        return(percent)
+def grade(percent):
+        global gra
+        if percent in range(85, 100):
+                gra='A'
+        elif percent in range(60, 84):
+                gra='B'
+        elif percent in ramge(45, 60):
+                gra='C'
+        else:
+                print("You Are Failed")
+        return(gra)
+def main(name,password):
+    if name == "sagar": 
+        if password == "123":
+                print("Access Granted")
+                global x
+                x=1
+        else:
+                print("Invalid password")
+    else:
+        print("Invalid credentials provided")
+        x=0
+    
+    return(x)
+def marksheet(name,total,percent,gra):
+        print("The name of the student : ",(name))
+        print("The total marks obtained:" ,(total))
+        print("The percentage Obtaines:" ,(percent))
+        print("The grade obtained:" ,(gra))
+if __name__ == '__main__':
+        credentials()
+    
